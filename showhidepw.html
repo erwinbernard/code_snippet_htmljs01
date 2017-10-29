@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>EBHub SPA Framework :: Sample Codes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <br/>
+    <p>
+      <strong>Sample Code courtesy of <u>EBHub SPA Framework</u></strong>. 
+      Please visit <a href="http://spafw.ebhub.net/demo">http://spafw.ebhub.net/demo</a>
+    </p>
+    <div class="input-group mb-md">
+      <span class="input-group-btn">
+        <button class="btn btn-success eb_password" passbox="ebhub_password_id" type="button">
+          <i class="fa fa-eye"></i>
+        </button>
+      </span>
+      <input
+        id="ebhub_password_id"
+        class="form-control"
+        type="password"
+        maxlength="40"
+        value=""
+        placeholder="Enter your Password"
+        title="Enter your Password"
+        name="ebhub_password_name"
+      />
+    </div>
+    <script type="text/javascript">
+      var ebhub = {
+        showhidepw: function () {
+          var array_class = document.getElementsByClassName("eb_password");
+          for (indexcount_a = 0; indexcount_a < array_class.length; indexcount_a++) {
+            array_class[indexcount_a].addEventListener("click", function () {
+                var mychild = this.children;
+                if (mychild[0].className === 'fa fa-eye') {
+                  mychild[0].className = 'fa fa-eye-slash';
+                  document.getElementById(this.getAttribute("passbox")).type="text";
+                } else {
+                  mychild[0].className = 'fa fa-eye';
+                  document.getElementById(this.getAttribute("passbox")).type="password";
+                }
+                return;
+              }
+            );
+          }
+          return;
+        }  
+      };
+      ebhub.showhidepw();
+    </script>
+  </body>
+</html>
